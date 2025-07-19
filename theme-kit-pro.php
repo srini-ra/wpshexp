@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Theme Kit Pro
  * Plugin URI: https://wpelance.com/theme-kit-pro
- * Description: Professional theme export/import solution with full Elementor & Gutenberg support, WooCommerce integration, and marketplace distribution
+ * Description: Professional theme export/import solution with full Elementor & Gutenberg support, WooCommerce integration, marketplace distribution, and cloud storage options
  * Version: 1.0.0
  * Author: WPelance
  * Author URI: https://wpelance.com
@@ -13,6 +13,16 @@
  * Tested up to: 6.4
  * Requires PHP: 7.4
  * Network: false
+ * 
+ * Security Features:
+ * - Input sanitization and validation
+ * - Nonce verification for all AJAX requests
+ * - Capability checks for all operations
+ * - File type validation and security scanning
+ * - SQL injection prevention
+ * - XSS protection
+ * - CSRF protection
+ * - Secure file handling
  */
 
 // Prevent direct access
@@ -63,6 +73,7 @@ class ThemeKitPro {
         add_action('wp_ajax_tkp_compatibility_check', array($this, 'ajax_compatibility_check'));
         add_action('wp_ajax_tkp_validate_kit', array($this, 'ajax_validate_kit'));
         add_action('wp_ajax_tkp_batch_process', array($this, 'ajax_batch_process'));
+        add_action('wp_ajax_tkp_download_package', array($this, 'ajax_download_package'));
         
         // Register activation/deactivation hooks
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -159,7 +170,9 @@ class ThemeKitPro {
             'includes/class-url-replacer.php',
             'includes/class-batch-processor.php',
             'includes/class-kit-validator.php',
-            'includes/class-support-helper.php'
+            'includes/class-support-helper.php',
+            'includes/class-security-scanner.php',
+            'includes/class-cloud-storage.php'
         );
         
         foreach ($includes as $file) {
@@ -421,6 +434,65 @@ class ThemeKitPro {
         } catch (Exception $e) {
             $this->error_handler->handle_ajax_error($e, 'batch_process');
         }
+    }
+    
+    /**
+     * Handle package download
+     */
+    public function ajax_download_package() {
+        try {
+            check_ajax_referer('tkp_nonce', 'nonce');
+            
+            if (!current_user_can('manage_options')) {
+                throw new Exception(__('Insufficient permissions', 'theme-kit-pro'));
+            }
+            
+            $package_path = sanitize_text_field($_POST['package_path']);
+            $download_type = sanitize_text_field($_POST['download_type']);
+            
+            if (!file_exists($package_path)) {
+                throw new Exception(__('Package file not found', 'theme-kit-pro'));
+            }
+            
+            switch ($download_type) {
+                case 'local':
+                    $result = $this->download_to_local($package_path);
+                    break;
+                case 'google_drive':
+                    $cloud_storage = new TKP_Cloud_Storage($this->logger);
+                    $result = $cloud_storage->upload_to_google_drive($package_path);
+                    break;
+                default:
+                    throw new Exception(__('Invalid download type', 'theme-kit-pro'));
+            }
+            
+            wp_send_json($result);
+            
+        } catch (Exception $e) {
+            $this->error_handler->handle_ajax_error($e, 'download_package');
+        }
+    }
+    
+    /**
+     * Download to local drive
+     */
+    private function download_to_local($package_path) {
+        $filename = basename($package_path);
+        
+        // Security check - ensure file is in allowed directory
+        $upload_dir = wp_upload_dir();
+        $allowed_path = $upload_dir['basedir'] . '/theme-kit-pro/';
+        
+        if (strpos(realpath($package_path), realpath($allowed_path)) !== 0) {
+            throw new Exception(__('Invalid file path', 'theme-kit-pro'));
+        }
+        
+        return array(
+            'success' => true,
+            'download_url' => $upload_dir['baseurl'] . '/theme-kit-pro/' . $filename,
+            'filename' => $filename,
+            'size' => size_format(filesize($package_path))
+        );
     }
     
     public function activate() {

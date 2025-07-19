@@ -1,0 +1,48 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4299e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38a169;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#logoGradient)" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Main Kit Box -->
+  <rect x="60" y="70" width="80" height="60" rx="8" fill="#ffffff" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- Kit Contents Lines -->
+  <line x1="70" y1="85" x2="130" y2="85" stroke="url(#accentGradient)" stroke-width="2"/>
+  <line x1="70" y1="95" x2="120" y2="95" stroke="url(#accentGradient)" stroke-width="2"/>
+  <line x1="70" y1="105" x2="125" y2="105" stroke="url(#accentGradient)" stroke-width="2"/>
+  <line x1="70" y1="115" x2="115" y2="115" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- Export Arrow -->
+  <path d="M 45 100 L 55 95 L 55 98 L 65 98 L 65 102 L 55 102 L 55 105 Z" fill="url(#accentGradient)"/>
+  
+  <!-- Import Arrow -->
+  <path d="M 155 100 L 145 95 L 145 98 L 135 98 L 135 102 L 145 102 L 145 105 Z" fill="url(#accentGradient)"/>
+  
+  <!-- Cloud Icon -->
+  <path d="M 85 45 C 80 45 75 48 75 53 C 72 53 70 55 70 58 C 70 61 72 63 75 63 L 95 63 C 98 63 100 61 100 58 C 100 55 98 53 95 53 C 95 48 90 45 85 45 Z" fill="#ffffff" stroke="url(#accentGradient)" stroke-width="1.5"/>
+  
+  <!-- Security Shield -->
+  <path d="M 115 45 L 115 50 C 115 55 118 58 122 58 C 126 58 129 55 129 50 L 129 45 L 115 45 Z M 122 40 C 127 40 132 45 132 50 L 132 58 C 132 62 129 65 125 65 L 119 65 C 115 65 112 62 112 58 L 112 50 C 112 45 117 40 122 40 Z" fill="#ffffff" stroke="url(#accentGradient)" stroke-width="1.5"/>
+  
+  <!-- Gear Icon -->
+  <circle cx="100" cy="150" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="2"/>
+  <circle cx="100" cy="150" r="3" fill="url(#accentGradient)"/>
+  <rect x="98" y="140" width="4" height="6" fill="url(#accentGradient)"/>
+  <rect x="98" y="154" width="4" height="6" fill="url(#accentGradient)"/>
+  <rect x="90" y="148" width="6" height="4" fill="url(#accentGradient)"/>
+  <rect x="104" y="148" width="6" height="4" fill="url(#accentGradient)"/>
+  
+  <!-- Text -->
+  <text x="100" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">THEME KIT</text>
+  <text x="100" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff">PRO</text>
+</svg>

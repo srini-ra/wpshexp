@@ -9,7 +9,19 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Author URI: https://wpelance.com
 
-Professional theme export/import solution with full Elementor & Gutenberg support, WooCommerce integration, and marketplace distribution.
+Professional theme export/import solution with full Elementor & Gutenberg support, WooCommerce integration, marketplace distribution, and cloud storage options.
+
+== Security Features ==
+
+* **Input Sanitization**: All user inputs are properly sanitized and validated
+* **Nonce Verification**: CSRF protection for all AJAX requests
+* **Capability Checks**: User permission verification for all operations
+* **File Security**: Comprehensive file type validation and content scanning
+* **SQL Injection Prevention**: Prepared statements and input validation
+* **XSS Protection**: Output escaping and input filtering
+* **Path Traversal Protection**: Secure file path handling
+* **Malware Scanning**: Automatic scanning of uploaded packages
+* **Secure File Handling**: Safe file operations with proper validation
 
 == Description ==
 
@@ -46,6 +58,12 @@ Theme Kit Pro is the ultimate WordPress plugin for theme developers, agencies, a
 * Automatic package distribution
 * Sales analytics and tracking
 
+**☁️ Cloud Storage:**
+* **Google Drive** integration for package storage
+* **Automatic uploads** after export
+* **Shareable links** for easy distribution
+* **Secure authentication** with OAuth2
+
 **🔧 Advanced Features:**
 * Kit preview before import
 * Batch processing for large imports
@@ -54,6 +72,9 @@ Theme Kit Pro is the ultimate WordPress plugin for theme developers, agencies, a
 * Image optimization during import
 * Comprehensive logging and debugging
 * In-plugin support and documentation
+* **Cloud Storage Integration**: Upload packages to Google Drive
+* **Security Scanning**: Automatic malware and vulnerability detection
+* **Download Options**: Local download and cloud storage options
 
 = Use Cases =
 
@@ -81,6 +102,7 @@ Theme Kit Pro is the ultimate WordPress plugin for theme developers, agencies, a
 * ZIP extension enabled
 * Writable upload directory
 * cURL extension for image imports
+* SSL/TLS support for cloud storage (recommended)
 
 == Installation ==
 
@@ -88,6 +110,13 @@ Theme Kit Pro is the ultimate WordPress plugin for theme developers, agencies, a
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Navigate to 'Theme Kit Pro' in the WordPress admin menu.
 4. Start exporting your theme packages!
+
+= Cloud Storage Setup =
+
+1. Go to Theme Kit Pro > Settings
+2. Configure Google Drive integration (optional)
+3. Authorize the plugin to access your Google Drive
+4. Choose automatic upload options
 
 == Frequently Asked Questions ==
 
@@ -138,6 +167,21 @@ Yes! Theme Kit Pro includes a localhost mode that bypasses certain remote checks
 
 Theme Kit Pro includes comprehensive error handling and logging. If an import fails, you'll get detailed information about what went wrong and how to fix it. The plugin also includes troubleshooting guides and support resources.
 
+= Is the plugin secure? =
+
+Yes! Theme Kit Pro includes comprehensive security features:
+* Automatic malware scanning of uploaded packages
+* Input validation and sanitization
+* CSRF protection with nonces
+* User capability checks
+* Secure file handling
+* SQL injection prevention
+* XSS protection
+
+= Can I upload packages to cloud storage? =
+
+Yes! Theme Kit Pro supports Google Drive integration. You can automatically upload exported packages to your Google Drive and get shareable links for easy distribution.
+
 == Screenshots ==
 
 1. Export page - Configure your theme package export settings
@@ -150,11 +194,30 @@ Theme Kit Pro includes comprehensive error handling and logging. If an import fa
 8. Logs and support - Comprehensive debugging and support tools
 9. WooCommerce integration - Export complete online stores
 10. Batch processing - Handle large imports efficiently
+11. Security scanner - Automatic threat detection
+12. Cloud storage - Google Drive integration
 
 == Changelog ==
 
 = 1.0.0 =
 * Initial release
+* **Security Features:**
+  * Comprehensive input validation and sanitization
+  * Automatic malware scanning of uploaded packages
+  * CSRF protection with WordPress nonces
+  * User capability verification
+  * Secure file handling with path validation
+  * SQL injection prevention
+  * XSS protection with output escaping
+* **Cloud Storage:**
+  * Google Drive integration with OAuth2 authentication
+  * Automatic package uploads to cloud storage
+  * Shareable links for easy distribution
+  * Secure credential storage
+* **Download Options:**
+  * Local download with secure file serving
+  * Cloud storage upload options
+  * Progress tracking for uploads
 * Export child themes as complete packages
 * Support for Elementor and Gutenberg
 * WooCommerce data export/import
@@ -176,10 +239,39 @@ Theme Kit Pro includes comprehensive error handling and logging. If an import fa
 * Progress tracking for import/export operations
 * System requirements checking
 
+== Credits and Attribution ==
+
+Theme Kit Pro was inspired by and builds upon concepts from several existing plugins:
+
+* **Template Kit Import/Export** - Basic template import/export concepts
+* **Elementor** - Template structure and handling methods
+* **WordPress Importer** - Content import methodologies
+* **WooCommerce** - Product data handling approaches
+
+We acknowledge and thank the developers of these plugins for their contributions to the WordPress ecosystem. Theme Kit Pro extends these concepts with enhanced security, cloud storage, marketplace integration, and comprehensive error handling.
+
+**Original Concepts:**
+* Template export/import workflow
+* WordPress content handling
+* Plugin dependency management
+* Theme file organization
+
+**Our Enhancements:**
+* Advanced security scanning and validation
+* Cloud storage integration (Google Drive)
+* Marketplace distribution automation
+* Comprehensive error handling and logging
+* Responsive design validation
+* Localhost development support
+* WooCommerce deep integration
+* Selective content export
+* Real-time progress tracking
+* Professional support system
+
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of Theme Kit Pro - The ultimate WordPress theme export/import solution.
+Initial release of Theme Kit Pro - The ultimate secure WordPress theme export/import solution with cloud storage and marketplace integration.
 
 == Development ==
 
