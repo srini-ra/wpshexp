@@ -1,0 +1,846 @@
+/**
+ * Admin CSS for Theme Exporter Pro
+ */
+
+.tep-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tep-main-content {
+    flex: 1;
+}
+
+.tep-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.tep-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.tep-card h2 {
+    margin-top: 0;
+    color: #1d2327;
+    font-size: 18px;
+}
+
+.tep-card h3 {
+    margin-top: 0;
+    color: #1d2327;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tep-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+}
+
+.tep-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.tep-section h3 {
+    margin-bottom: 15px;
+    color: #23282d;
+    font-size: 16px;
+}
+
+.tep-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.tep-actions .button {
+    min-width: 200px;
+    height: 40px;
+    font-size: 14px;
+}
+
+.tep-actions .dashicons {
+    margin-right: 5px;
+}
+
+/* Upload Area */
+.tep-upload-area {
+    position: relative;
+    border: 2px dashed #c3c4c7;
+    border-radius: 4px;
+    padding: 40px;
+    text-align: center;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.tep-upload-area:hover {
+    border-color: #007cba;
+    background: #f0f8ff;
+}
+
+.tep-upload-area.dragover {
+    border-color: #007cba;
+    background: #e6f3ff;
+}
+
+.tep-upload-area input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tep-upload-text {
+    pointer-events: none;
+}
+
+.tep-upload-text .dashicons {
+    font-size: 48px;
+    color: #c3c4c7;
+    margin-bottom: 10px;
+}
+
+.tep-upload-text p {
+    margin: 10px 0;
+    color: #646970;
+}
+
+/* Info List */
+.tep-info-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tep-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tep-info-item:last-child {
+    border-bottom: none;
+}
+
+.tep-info-item strong {
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.tep-info-item span {
+    color: #646970;
+}
+
+/* System Check */
+.tep-system-check {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tep-check-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.tep-check-item .dashicons {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.tep-check-item.success {
+    color: #00a32a;
+}
+
+.tep-check-item.success .dashicons {
+    color: #00a32a;
+}
+
+.tep-check-item.warning {
+    color: #dba617;
+}
+
+.tep-check-item.warning .dashicons {
+    color: #dba617;
+}
+
+.tep-check-item.error {
+    color: #d63638;
+}
+
+.tep-check-item.error .dashicons {
+    color: #d63638;
+}
+
+/* Progress Modal */
+.tep-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tep-modal-content {
+    background: #fff;
+    border-radius: 4px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tep-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #e1e1e1;
+    background: #f9f9f9;
+}
+
+.tep-modal-header h3 {
+    margin: 0;
+    color: #1d2327;
+    font-size: 18px;
+}
+
+.tep-modal-body {
+    padding: 30px;
+}
+
+/* Progress Bar */
+.tep-progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #e1e1e1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.tep-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007cba, #00a32a);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.tep-progress-text {
+    text-align: center;
+    color: #646970;
+    font-size: 14px;
+}
+
+/* Notes */
+.tep-notes ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.tep-notes li {
+    margin-bottom: 8px;
+    color: #646970;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .tep-container {
+        flex-direction: column;
+    }
+    
+    .tep-sidebar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .tep-sidebar .tep-card {
+        flex: 1;
+        min-width: 300px;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tep-sidebar {
+        flex-direction: column;
+    }
+    
+    .tep-sidebar .tep-card {
+        min-width: auto;
+        margin-bottom: 20px;
+    }
+    
+    .tep-upload-area {
+        padding: 20px;
+    }
+    
+    .tep-upload-text .dashicons {
+        font-size: 32px;
+    }
+    
+    .tep-info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tep-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Loading State */
+.tep-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.tep-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tep-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #007cba;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    z-index: 2;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success/Error Messages */
+.tep-message {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.tep-message.success {
+    background: #d4edda;
+    border-color: #00a32a;
+    color: #155724;
+}
+
+.tep-message.error {
+    background: #f8d7da;
+    border-color: #d63638;
+    color: #721c24;
+}
+
+.tep-message.info {
+    background: #d1ecf1;
+    border-color: #007cba;
+    color: #0c5460;
+}
+
+/* Button States */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+/* Selective Export Styles */
+.tep-content-tabs {
+    margin-bottom: 2rem;
+}
+
+.tep-tab-nav {
+    display: flex;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tep-tab-button {
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: #646970;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.tep-tab-button:hover {
+    color: #007cba;
+}
+
+.tep-tab-button.active {
+    color: #007cba;
+    border-bottom-color: #007cba;
+}
+
+.tep-tab-content {
+    display: none;
+}
+
+.tep-tab-content.active {
+    display: block;
+}
+
+.tep-content-section {
+    margin-bottom: 2rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tep-section-header {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.tep-select-all {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tep-count {
+    color: #646970;
+    font-weight: normal;
+}
+
+.tep-content-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.tep-content-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tep-content-item:hover {
+    background: #f9f9f9;
+}
+
+.tep-content-item:last-child {
+    border-bottom: none;
+}
+
+.tep-content-item input[type="checkbox"] {
+    margin-right: 0.75rem;
+}
+
+.tep-item-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.tep-item-thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.tep-item-details {
+    flex: 1;
+}
+
+.tep-item-meta {
+    display: block;
+    color: #646970;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Media Grid */
+.tep-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.tep-media-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tep-media-item:hover {
+    border-color: #007cba;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tep-media-item input[type="checkbox"] {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.tep-media-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tep-media-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tep-file-icon {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #646970;
+}
+
+.tep-media-info {
+    text-align: center;
+}
+
+.tep-media-info strong {
+    display: block;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    word-break: break-word;
+}
+
+.tep-file-size {
+    font-size: 0.75rem;
+    color: #646970;
+}
+
+/* WooCommerce Options */
+.tep-wc-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.tep-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tep-checkbox-label:hover {
+    border-color: #007cba;
+    background: #f0f8ff;
+}
+
+/* Stats List */
+.tep-stats-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tep-stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tep-stat-item:last-child {
+    border-bottom: none;
+}
+
+/* Selection Summary */
+#tep-selection-summary {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+/* Marketplace Styles */
+.tep-marketplace-tabs {
+    margin-bottom: 2rem;
+}
+
+.tep-logs-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.tep-log-item {
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.tep-log-item.success {
+    border-left: 4px solid #00a32a;
+}
+
+.tep-log-item.error {
+    border-left: 4px solid #d63638;
+}
+
+.tep-log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.tep-log-date {
+    color: #646970;
+    font-size: 0.875rem;
+}
+
+.tep-log-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.tep-marketplace {
+    background: #e1e1e1;
+    color: #646970;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.tep-log-status {
+    font-weight: bold;
+}
+
+.tep-log-status.success {
+    color: #00a32a;
+}
+
+.tep-log-status.error {
+    color: #d63638;
+}
+
+.tep-log-message {
+    color: #646970;
+    font-size: 0.875rem;
+}
+
+.tep-marketplace-status {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tep-status-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tep-status-item:last-child {
+    border-bottom: none;
+}
+
+.tep-status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.tep-status-indicator.enabled {
+    background: #00a32a;
+}
+
+.tep-status-indicator.disabled {
+    background: #d63638;
+}
+
+.tep-status-info strong {
+    display: block;
+    color: #1d2327;
+}
+
+.tep-status-info span {
+    color: #646970;
+    font-size: 0.875rem;
+}
+
+/* Preview Styles */
+.tep-preview-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tep-preview-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.tep-preview-item:hover {
+    transform: translateY(-2px);
+}
+
+.tep-preview-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tep-preview-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+}
+
+.tep-preview-overlay h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+}
+
+.tep-preview-overlay p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .tep-tab-nav {
+        flex-direction: column;
+    }
+    
+    .tep-media-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .tep-wc-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .tep-item-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .tep-log-header,
+    .tep-log-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
